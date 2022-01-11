@@ -39,8 +39,6 @@ ggplot(data = plastic_waste,
 
 ### Exercise 2
 
-We define color and fill by the mapping aesthetics because we need to assign those qualities to specific variables. On the otherhand, alpha applies to the entire visual and does not need to be changed based on a variable level. 
-
 ```{r plastic-waste-density}
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap, 
@@ -49,9 +47,22 @@ ggplot(data = plastic_waste,
   geom_density(alpha = 0.3)
 ```
 
-### Exercise 3
+We define color and fill by the mapping aesthetics because we need to assign those qualities to specific variables. On the otherhand, alpha applies to the entire visual and does not need to be changed based on a variable level. 
 
-Remove this text, and add your answer for Exercise 3 here.
+### Exercise 3
+```{r boxplot}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
+
+```{r violin plot}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+```
 
 ### Exercise 4
 
