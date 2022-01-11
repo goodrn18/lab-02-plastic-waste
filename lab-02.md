@@ -46,7 +46,7 @@ ggplot(data = plastic_waste,
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent,
                      fill = continent)) +
-  geom_density(alpha = 0.4)
+  geom_density(alpha = 0.7)
 ```
 
     ## Warning: Removed 51 rows containing non-finite values (stat_density).
@@ -55,9 +55,22 @@ ggplot(data = plastic_waste,
 
 ### Exercise 2
 
+We define color and fill by the mapping aesthetics because we need to
+assign those qualities to specific variables. On the otherhand, alpha
+applies to the entire visual and does not need to be changed based on a
+variable level.
+
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent,
+                     fill = continent)) +
+  geom_density(alpha = 0.3)
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
 ### Exercise 3
 

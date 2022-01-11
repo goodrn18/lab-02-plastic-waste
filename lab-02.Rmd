@@ -34,13 +34,19 @@ ggplot(data = plastic_waste,
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent,
                      fill = continent)) +
-  geom_density(alpha = 0.4)
+  geom_density(alpha = 0.7)
 ```
 
 ### Exercise 2
 
+We define color and fill by the mapping aesthetics because we need to assign those qualities to specific variables. On the otherhand, alpha applies to the entire visual and does not need to be changed based on a variable level. 
+
 ```{r plastic-waste-density}
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent,
+                     fill = continent)) +
+  geom_density(alpha = 0.3)
 ```
 
 ### Exercise 3
