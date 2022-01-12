@@ -57,6 +57,9 @@ ggplot(data = plastic_waste,
   geom_boxplot()
 ```
 
+
+### Exercise 4
+
 ```{r violin plot}
 ggplot(data = plastic_waste, 
        mapping = aes(x = continent,
@@ -64,13 +67,26 @@ ggplot(data = plastic_waste,
   geom_violin()
 ```
 
-The violin plot more clearly displays the density plot for each continent than the density plot shown above. Unlike the boxplot, the violin plot does not clearly show the quartiles, nor the mean of the data set. It also does not have clear points for outliers in the data. 
+The violin plot more clearly displays the density plot for each continent than the density plot shown above. Unlike the boxplot, the violin plot does not clearly show the quartiles, nor the mean of the data set. It also does not have clear points for outliers in the data.
 
-### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
+### Exercise 5
 
-```{r plastic-waste-scatterplot}
+Remove this text, and add your answer for Exercise 5 here.
+
+```{r plastic-waste-mismanaged}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap,
+                     y = mismanaged_plastic_waste_per_cap,
+                     )) +
+  geom_point()
+```
+
+### Exercise 6
+
+Remove this text, and add your answer for Exercise 6 here.
+
+```{r plastic-waste-mismanaged-continent}
 ggplot(data = plastic_waste, 
        mapping = aes(x = plastic_waste_per_cap,
                      y = mismanaged_plastic_waste_per_cap,
@@ -79,32 +95,26 @@ ggplot(data = plastic_waste,
   geom_point()
 ```
 
-### Exercise 5
-
-Remove this text, and add your answer for Exercise 5 here.
-
-```{r plastic-waste-mismanaged}
-# insert code here
-```
-
-### Exercise 6
-
-Remove this text, and add your answer for Exercise 6 here.
-
-```{r plastic-waste-mismanaged-continent}
-# insert code here
-```
-
 ### Exercise 7
 
 Remove this text, and add your answer for Exercise 7 here.
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap,
+                     y = total_pop,
+                     color = continent,
+                     fill = continent)) +
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap,
+                     y = coastal_pop,
+                     color = continent,
+                     fill = continent)) +
+  geom_point()
 ```
 
 ### Exercise 8
@@ -112,7 +122,17 @@ Remove this text, and add your answer for Exercise 7 here.
 Remove this text, and add your answer for Exercise 8 here.
 
 ```{r recreate-viz}
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = coastal_pop/total_pop,
+                     y =  plastic_waste_per_cap,
+                     color = continent)) +
+  geom_point() +
+  ylim(0, 0.7) +
+  labs(title = "Plastic waste vs. coastal population proportion",
+       subtitle = "by continent",
+       x = "Coastal population proportion (Coastal/total population)",
+       y = "Plastic waste per capita",
+       color = "Continent")
 ```
 
 ## Pro-Tips
