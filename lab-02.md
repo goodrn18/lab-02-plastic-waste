@@ -87,8 +87,8 @@ ggplot(data = plastic_waste,
 
 ``` r
 ggplot(data = plastic_waste, 
-       mapping = aes(x = continent, 
-                     y = plastic_waste_per_cap)) +
+       mapping = aes(x = continent,
+                     y = plastic_waste_per_cap,)) +
   geom_violin()
 ```
 
@@ -96,13 +96,27 @@ ggplot(data = plastic_waste,
 
 ![](lab-02_files/figure-gfm/violin%20plot-1.png)<!-- -->
 
+The violin plot more clearly displays the density plot for each
+continent than the density plot shown above. Unlike the boxplot, the
+violin plot does not clearly show the quartiles, nor the mean of the
+data set. It also does not have clear points for outliers in the data.
+
 ### Exercise 4
 
 Remove this text, and add your answer for Exercise 4 here.
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap,
+                     y = mismanaged_plastic_waste_per_cap,
+                     color = continent,
+                     fill = continent)) +
+  geom_point()
 ```
+
+    ## Warning: Removed 51 rows containing missing values (geom_point).
+
+![](lab-02_files/figure-gfm/plastic-waste-scatterplot-1.png)<!-- -->
 
 ### Exercise 5
 
