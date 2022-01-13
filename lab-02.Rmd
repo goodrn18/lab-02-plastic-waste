@@ -122,11 +122,12 @@ ggplot(data = plastic_waste,
 Remove this text, and add your answer for Exercise 8 here.
 
 ```{r recreate-viz}
-ggplot(data = plastic_waste, 
-       mapping = aes(x = coastal_pop/total_pop,
+ggplot(data = plastic_waste)+
+  geom_point(mapping = aes(x = coastal_pop/total_pop,
                      y =  plastic_waste_per_cap,
                      color = continent)) +
-  geom_point() +
+    geom_smooth(mapping = aes(x = coastal_pop/total_pop,
+                              y = plastic_waste_per_cap))+
   ylim(0, 0.7) +
   labs(title = "Plastic waste vs. coastal population proportion",
        subtitle = "by continent",

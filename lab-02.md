@@ -171,11 +171,12 @@ ggplot(data = plastic_waste,
 Remove this text, and add your answer for Exercise 8 here.
 
 ``` r
-ggplot(data = plastic_waste, 
-       mapping = aes(x = coastal_pop/total_pop,
+ggplot(data = plastic_waste)+
+  geom_point(mapping = aes(x = coastal_pop/total_pop,
                      y =  plastic_waste_per_cap,
                      color = continent)) +
-  geom_point() +
+    geom_smooth(mapping = aes(x = coastal_pop/total_pop,
+                              y = plastic_waste_per_cap))+
   ylim(0, 0.7) +
   labs(title = "Plastic waste vs. coastal population proportion",
        subtitle = "by continent",
@@ -183,6 +184,10 @@ ggplot(data = plastic_waste,
        y = "Plastic waste per capita",
        color = "Continent")
 ```
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 62 rows containing non-finite values (stat_smooth).
 
     ## Warning: Removed 62 rows containing missing values (geom_point).
 
